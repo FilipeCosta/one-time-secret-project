@@ -1,0 +1,29 @@
+{
+  "name": "one-time-secret-server",
+  "version": "1.0.0",
+  "description": "The server that allows managing a super secret",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start-server": "nodemon app.js"
+  },
+  "keywords": [
+    "secret",
+    "password",
+    "share"
+  ],
+  "author": "FilipeCosta",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.16.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
