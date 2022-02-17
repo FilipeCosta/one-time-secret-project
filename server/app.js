@@ -20,7 +20,7 @@ app.use("/one-time-secret", secretRoutes);
 
 sequelize
   .sync()
-  .then((result) => {
+  .then((_) => {
     app.listen(8080);
   })
   .catch((err) => {

@@ -81,7 +81,7 @@ const SecretHiddenArea = (props) => {
         )}
       </SecretPasswordWrapper>
       <SecretWarningArea>
-        <SecretAreaImg src="/warning.png" />
+        <SecretAreaImg alt="warning" src="/warning.png" />
         <SecretAreaText>
           This is a one-time secret and will be deleted from the server after
           you revealed it

@@ -45,12 +45,12 @@ const SecretNavbar = () => {
     <Navbar>
       <NavbarLeft>
         <NavbarLink to="/">
-          <NavbarImg src="/eye.png" />
+          <NavbarImg alt="logo" src="/eye.png" />
           <NavbarTitle>reveal.io</NavbarTitle>
         </NavbarLink>
       </NavbarLeft>
       <NavbarLink to="/one-time-secret/config">
-        <NavbarConfig src="/config.png"></NavbarConfig>
+        <NavbarConfig alt="config" src="/config.png"></NavbarConfig>
       </NavbarLink>
     </Navbar>
   );

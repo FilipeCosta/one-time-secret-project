@@ -69,6 +69,7 @@ const SecretClipBoard = (props) => {
           {url}
         </SecretClipBoardBoxSecretUrl>
         <SecretClipBoardBoxImage
+          alt="copy to clipboard"
           title="copy to clipboard"
           src="clipboard.png"
           onClick={copyToClipBoard}
