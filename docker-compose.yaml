@@ -4,17 +4,21 @@ volumes:
 services:
   mysql-db:
     image: "bitnami/mysql:latest"
-    env_file:
-      - ./server/.env
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=1234
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=one-time-secret
+      - MYSQL_HOST=mysql-db
     restart: always
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - my-datavolume:/var/lib/mysql
   client:
     build: ./client
     ports:
-      - "3307:3306"
+      - "3000:3000"
     stdin_open: true
     tty: true
     depends_on:
@@ -27,7 +31,7 @@ services:
     #   args:
     #     some-arg: 1
     ports:
-      - "6868:8080"
+      - "8080:8080"
     volumes:
       - ./server:/app
       - /app/node_modules
