@@ -18,11 +18,25 @@ app.use(bodyParser.json());
 
 app.use("/one-time-secret", secretRoutes);
 
-sequelize
-  .sync()
-  .then((_) => {
-    app.listen(8080);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+const sleep = (timeInMs) =>
+  new Promise((resolve) => setTimeout(resolve, timeInMs));
+
+// wait for the database to be up and running
+(async () => {
+  let isConnected = false;
+
+  while (!isConnected) {
+    await sequelize
+      .sync()
+      .then(() => {
+        isConnected = true;
+        console.log("Database is up - starting web server at port 8080");
+        app.listen(8080);
+      })
+      .catch(() => {
+        console.log("Database is unavailable - sleeping");
+
+        return sleep(1000);
+      });
+  }
+})();

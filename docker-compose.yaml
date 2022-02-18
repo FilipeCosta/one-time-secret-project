@@ -4,7 +4,7 @@ volumes:
 services:
   mysql-db:
     container_name: mysql-container
-    image: "mysql:5.7"
+    image: "mariadb:latest"
     environment:
       - MYSQL_ROOT_PASSWORD=1234
       - MYSQL_DATABASE=one-time-secret
