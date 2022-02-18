@@ -3,6 +3,12 @@ A project where people can share secrets and see them temporarily for x times
 
 # How To run it
 
+<b>Option 1 Faster </b>
+
+In the root of the folder run docker-compose up, and wait for the services to finish run. If there is any error make sure that your ports are avaialable and finish process at those ports.
+
+<b>Option 2 Slower </b>
+
 1) First important thing is to install the microsoft community tools: https://dev.mysql.com/downloads/mysql/ Include them all (Workbench, server) and start the server when finish installing
 also match the same user, password and port that is specified in the .env file here: /server/.env.
 
