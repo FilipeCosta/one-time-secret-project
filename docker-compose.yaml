@@ -1,18 +1,17 @@
 version: "3.8"
 volumes:
   my-datavolume:
+
 services:
   mysql-db:
-    image: "bitnami/mysql:latest"
+    image: "mariadb:latest"
     environment:
-      - MYSQL_USER=root
-      - MYSQL_PASSWORD=1234
       - MYSQL_ROOT_PASSWORD=1234
       - MYSQL_DATABASE=one-time-secret
       - MYSQL_HOST=mysql-db
     restart: always
     ports:
-      - "3307:3306"
+      - "3306:3306"
     volumes:
       - my-datavolume:/var/lib/mysql
   client:
